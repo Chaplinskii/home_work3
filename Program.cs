@@ -61,24 +61,43 @@
 // Задайте произвольную строку. Выясните,
 // является ли она палиндромом.
 
-bool Answer (string str){
-    for (int i=0;i<str.Length/2;i++){
-        if (str[i]!=str[str.Length-1-i]){
-            return false;
-        }
+// bool Answer (string str){
+//     for (int i=0;i<str.Length/2;i++){
+//         if (str[i]!=str[str.Length-1-i]){
+//             return false;
+//         }
         
-    }
-    return true;
+//     }
+//     return true;
+// }
+// void PrintAnswer(bool answer){
+//     if (answer==true){
+//     Console.WriteLine("Yes");
+//     }
+//     else {
+//     Console.WriteLine("No");
+//     }
+// }
+// Console.Clear();
+// Console.Write("Введите строку: ");
+// string str = Console.ReadLine()!;
+// PrintAnswer(Answer(str));
+
+// Задача 4*:
+//  Задайте строку, состоящую из слов, разделенных пробелами. Сформировать строку,
+// в которой слова расположены в обратном порядке. В
+// полученной строке слова должны быть также разделены
+// пробелами.
+
+string[] Split(string str){
+string[] words = str.Split(new [] {' '}, 3);;
+return words;
 }
-void PrintAnswer(bool answer){
-    if (answer==true){
-    Console.WriteLine("Yes");
-    }
-    else {
-    Console.WriteLine("No");
-    }
+string exchange(string[] str){
+    string wordsAfter = string.Format("{0} {1} {2}",str[2], str[1], str[0]);
+    return wordsAfter;
 }
 Console.Clear();
 Console.Write("Введите строку: ");
 string str = Console.ReadLine()!;
-PrintAnswer(Answer(str));
+Console.Write(exchange(Split(str)));
